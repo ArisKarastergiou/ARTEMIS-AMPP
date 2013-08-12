@@ -12,15 +12,15 @@ Dependencies
 
 Setup A Build Directory
 -----------------------
-e.g. for your src code at /path/to/pelican-lofar/src
+e.g. for your src code at /path/to/AMPP/src
 
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=release /path/to/pelican-lofar/src
+cmake -DCMAKE_BUILD_TYPE=release /path/to/AMPP/src
 
 You may need to specify where the various dependencies are. This can be done 
 with more -D options to cmake. See the documentation at the top of
-the relevant FindXXX.cmake files in the /path/to/pelican-lofar/src/cmake
+the relevant FindXXX.cmake files in the /path/to/AMPP/src/cmake
 directory to find the correct variables to set.
 
 If all has gone well CMake will of created you build directory and makefiles.
