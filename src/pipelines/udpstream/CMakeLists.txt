@@ -26,7 +26,7 @@ add_library(pelicanMdsm ${pipeline_lib_src})
 add_executable(emptyPipeline src/emptyPipelineMain.cpp)
 target_link_libraries(emptyPipeline
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTXML_LIBRARY}
@@ -42,7 +42,7 @@ set_target_properties(dedispersionStream1 PROPERTIES
 )
 target_link_libraries(dedispersionStream1
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -57,7 +57,7 @@ set_target_properties(dedispersionStream2 PROPERTIES
 )
 target_link_libraries(dedispersionStream2
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -77,7 +77,7 @@ set_target_properties(udpBFPipeline PROPERTIES
 )
 target_link_libraries(udpBFPipeline
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -94,7 +94,7 @@ set_target_properties(udpBFPipelineStream1 PROPERTIES
 )
 target_link_libraries(udpBFPipelineStream1
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -111,7 +111,7 @@ set_target_properties(udpBFPipelineStream2 PROPERTIES
 )
 target_link_libraries(udpBFPipelineStream2
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -127,7 +127,7 @@ set_target_properties(embraceBFPipeline PROPERTIES
 )
 target_link_libraries(embraceBFPipeline
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -144,7 +144,7 @@ set_target_properties(embraceBFPipelineStream1 PROPERTIES
 )
 target_link_libraries(embraceBFPipelineStream1
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -161,7 +161,7 @@ set_target_properties(embraceBFPipelineStream2 PROPERTIES
 )
 target_link_libraries(embraceBFPipelineStream2
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -177,7 +177,7 @@ set_target_properties(h5CVPipeline PROPERTIES
 )
 target_link_libraries(h5CVPipeline
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -194,7 +194,7 @@ set_target_properties(h5CVPipelineStream1 PROPERTIES
 )
 target_link_libraries(h5CVPipelineStream1
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -211,7 +211,7 @@ set_target_properties(h5CVPipelineStream2 PROPERTIES
 )
 target_link_libraries(h5CVPipelineStream2
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
@@ -229,7 +229,7 @@ target_link_libraries(h5CVPipelineStream2
 # )
 # target_link_libraries(sigprocPipeline
 #     pelicanMdsm
-#     pelican-lofar_static
+#     AMPP_static
 #     ${PELICAN_LIBRARY}
 #     ${FFTW3_FFTW_LIBRARY}
 #     ${FFTW3_FFTWF_LIBRARY}
@@ -246,7 +246,7 @@ set_target_properties(timingPipeline PROPERTIES
 )
 target_link_libraries(timingPipeline
     pelicanMdsm
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}

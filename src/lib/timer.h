@@ -1,5 +1,5 @@
-#ifndef PELICAN_LOFAR_TIMER_H_
-#define PELICAN_LOFAR_TIMER_H_
+#ifndef AMPP_TIMER_H_
+#define AMPP_TIMER_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,6 +43,6 @@ static inline void timerUpdate(TimerData* data)
 #define timerUpdate(TimerData)
 #endif
 
-} // end pelican-lofar namespace
+} // end AMPP namespace
 } // end pelican
 #endif

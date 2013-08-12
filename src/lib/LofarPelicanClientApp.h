@@ -19,7 +19,7 @@ namespace lofar {
  *  
  * @brief
  *     convenience class for applications wishing to do downstream
- * processing of data streamed from a pelican-lofar pipeline
+ * processing of data streamed from a AMPP pipeline
  * 
  * @details
  *  

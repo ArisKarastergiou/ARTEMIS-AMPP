@@ -5,7 +5,7 @@
 #include "pelican/comms/DataBlobResponse.h"
 #include "pelican/comms/ServerResponse.h"
 
-// Pelican-Lofar headers.
+// AMPP headers.
 #include "PelicanBlobClient.h"
 #include "SpectrumDataSet.h"
 

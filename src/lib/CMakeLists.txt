@@ -1,6 +1,6 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-# === Create the pelican-lofar library and set its install target.
+# === Create the AMPP library and set its install target.
 set(lib_src
     src/AdapterTimeSeriesDataSet.cpp
     src/BinMap.cpp
@@ -103,26 +103,26 @@ else(CUDA_FOUND)
     set(cuda_libs)
 endif(CUDA_FOUND)
 
-# === Create pelican-lofar library.
-add_library(pelican-lofar_static STATIC ${moc_src} ${lib_src} )
-set_target_properties(pelican-lofar_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
-set_target_properties(pelican-lofar_static PROPERTIES OUTPUT_NAME pelican-lofar)
-set_target_properties(pelican-lofar_static PROPERTIES PREFIX lib)
-set_target_properties(pelican-lofar_static PROPERTIES
+# === Create AMPP library.
+add_library(AMPP_static STATIC ${moc_src} ${lib_src} )
+set_target_properties(AMPP_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties(AMPP_static PROPERTIES OUTPUT_NAME AMPP)
+set_target_properties(AMPP_static PROPERTIES PREFIX lib)
+set_target_properties(AMPP_static PROPERTIES
     COMPILE_FLAGS "${OpenMP_CXX_FLAGS}"
     LINK_FLAGS "${OpenMP_CXX_FLAGS}"
 )
-install(TARGETS pelican-lofar_static DESTINATION ${LIBRARY_INSTALL_DIR})
+install(TARGETS AMPP_static DESTINATION ${LIBRARY_INSTALL_DIR})
 
-add_library(pelican-lofar SHARED ${moc_src} ${lib_src})
-set_target_properties(pelican-lofar PROPERTIES CLEAN_DIRECT_OUTPUT 1)
-set_target_properties(pelican-lofar PROPERTIES
+add_library(AMPP SHARED ${moc_src} ${lib_src})
+set_target_properties(AMPP PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties(AMPP PROPERTIES
     COMPILE_FLAGS "${OpenMP_CXX_FLAGS}"
     LINK_FLAGS "${OpenMP_CXX_FLAGS}"
 )
-install(TARGETS pelican-lofar DESTINATION ${LIBRARY_INSTALL_DIR})
+install(TARGETS AMPP DESTINATION ${LIBRARY_INSTALL_DIR})
 
-set(pelican-lofar_externals
+set(AMPP_externals
     ${FFTW3_FFTW_LIBRARY}
     ${FFTW3_FFTWF_LIBRARY}
     ${LAPACK_LIBRARIES}
@@ -132,9 +132,9 @@ set(pelican-lofar_externals
     rt
 )
 
-target_link_libraries(pelican-lofar_static ${pelican-lofar_externals})
+target_link_libraries(AMPP_static ${AMPP_externals})
 
-target_link_libraries(pelican-lofar ${pelican-lofar_externals})
+target_link_libraries(AMPP ${AMPP_externals})
 
 
 file(GLOB public_headers RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*.h")
@@ -143,7 +143,7 @@ install(FILES ${public_headers} DESTINATION "${INCLUDE_INSTALL_DIR}")
 # === Create the blob client binary.
 add_executable(blobClient blobClientMain.cpp)
 target_link_libraries(blobClient
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTXML_LIBRARY}

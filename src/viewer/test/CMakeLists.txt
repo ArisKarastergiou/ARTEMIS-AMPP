@@ -12,7 +12,7 @@ add_executable(plotWidgetTest
 target_link_libraries(plotWidgetTest
     lofarWidgets
     ${PELICAN_LIBRARY}
-    pelican-lofar
+    AMPP
     ${Qwt5_Qt4_LIBRARY}
     ${QT_QTTEST_LIBRARY}
     ${QT_QTGUI_LIBRARY}
@@ -24,7 +24,7 @@ add_executable(spectrumSender SpectrumSender.cpp)
 target_link_libraries(spectrumSender
     lofarWidgets
     ${PELICAN_LIBRARY}
-    pelican-lofar
+    AMPP
     ${Qwt5_Qt4_LIBRARY}
     ${QT_QTTEST_LIBRARY}
     ${QT_QTGUI_LIBRARY}

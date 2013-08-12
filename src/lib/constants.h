@@ -10,7 +10,7 @@ namespace lofar {
 
 /**
  * @brief
- * Constants used by Pelican-lofar modules.
+ * Constants used by AMPP modules.
  */
 
 namespace math
@@ -28,7 +28,7 @@ const double asec2deg = 2.777777777777777777777777777777777777778e-4;
 
 /**
  * @brief
- * Constants used by Pelican-lofar modules.
+ * Constants used by AMPP modules.
  */
 
 ///

@@ -8,7 +8,7 @@ int main(int /*argc*/, char** /*argv*/)
 {
 
     int argc = 1;
-    char *argv[] = {(char*)"pelican-lofar"};
+    char *argv[] = {(char*)"AMPP"};
     QCoreApplication* app = new QCoreApplication(argc, argv);
 
     // Get the top level suite from the registry

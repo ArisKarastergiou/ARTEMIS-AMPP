@@ -1,5 +1,5 @@
 #
-# pelican-lofar/lib/test/CMakeLists.txt
+# AMPP/lib/test/CMakeLists.txt
 #
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -29,7 +29,7 @@ endif( CUDA_FOUND )
 
 add_library(lofarTestLib STATIC ${lofarTestLib_src} ${cuda_obj} )
 target_link_libraries(lofarTestLib
-    pelican-lofar
+    AMPP
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${Boost_PROGRAM_OPTIONS_LIBRARY}
@@ -78,7 +78,7 @@ set_target_properties(lofarTest PROPERTIES
     COMPILE_FLAGS "${OpenMP_CXX_FLAGS}"
     LINK_FLAGS "${OpenMP_CXX_FLAGS}")
 target_link_libraries(lofarTest
-    pelican-lofar_static
+    AMPP_static
     lofarTestLib
     ${PELICAN_TESTUTILS_LIBRARY}
     ${PELICAN_LIBRARY}
@@ -95,7 +95,7 @@ add_test(lofarTest lofarTest)
 add_executable(lofarEmulator src/lofarEmulatorMain.cpp)
 target_link_libraries(lofarEmulator
     ${PELICAN_LIBRARY}
-    pelican-lofar_static
+    AMPP_static
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTXML_LIBRARY}
@@ -106,7 +106,7 @@ target_link_libraries(lofarEmulator
 add_executable(lofarEmulatorDataSim src/lofarEmulatorDataSimMain.cpp)
 target_link_libraries(lofarEmulatorDataSim
     ${PELICAN_LIBRARY}
-    pelican-lofar_static
+    AMPP_static
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTXML_LIBRARY}
@@ -122,7 +122,7 @@ set_target_properties(ppf_performance_test PROPERTIES
 )
 
 target_link_libraries(ppf_performance_test
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
@@ -136,7 +136,7 @@ set_target_properties(ppf_profile_test PROPERTIES
     LINK_FLAGS "${OpenMP_CXX_FLAGS}"
 )
 target_link_libraries(ppf_profile_test
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}

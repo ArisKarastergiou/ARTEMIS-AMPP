@@ -13,8 +13,8 @@ set( crosschecker_moc_headers
 # MOC Compile headers.
 QT4_WRAP_CPP(crosschecker_src ${crosschecker_moc_headers})
 add_library(crosschecker SHARED ${crosschecker_src} )
-set_target_properties(pelican-lofar PROPERTIES CLEAN_DIRECT_OUTPUT 1)
-set_target_properties(pelican-lofar PROPERTIES
+set_target_properties(AMPP PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties(AMPP PROPERTIES
     COMPILE_FLAGS "${OpenMP_CXX_FLAGS}"
     LINK_FLAGS "${OpenMP_CXX_FLAGS}"
 )
@@ -22,7 +22,7 @@ install(TARGETS crosschecker DESTINATION ${LIBRARY_INSTALL_DIR})
 
 set(crosschecker_externals
     ${PELICAN_LIBRARY}
-    pelican-lofar
+    AMPP
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTXML_LIBRARY}
     ${QT_QTCORE_LIBRARY}

@@ -1,5 +1,5 @@
 # === Set the project name and specify the required CMAKE version.
-project(pelican-lofar CXX C Fortran)
+project(AMPP CXX C Fortran)
 cmake_minimum_required(VERSION 2.4)
 
 # === Project version
@@ -14,20 +14,20 @@ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 enable_testing()
 
 # === Options and defaults.
-if(NOT PELICAN_LOFAR_INSTALL_DIR)
-    set(PELICAN_LOFAR_INSTALL_DIR "pelican-lofar")
-endif(NOT PELICAN_LOFAR_INSTALL_DIR)
+if(NOT AMPP_INSTALL_DIR)
+    set(AMPP_INSTALL_DIR "AMPP")
+endif(NOT AMPP_INSTALL_DIR)
 
 if(NOT LIBRARY_INSTALL_DIR)
-    set(LIBRARY_INSTALL_DIR "${PELICAN_LOFAR_INSTALL_DIR}/lib")
+    set(LIBRARY_INSTALL_DIR "${AMPP_INSTALL_DIR}/lib")
 endif(NOT LIBRARY_INSTALL_DIR)
 
 if(NOT INCLUDE_INSTALL_DIR)
-    set(INCLUDE_INSTALL_DIR "${PELICAN_LOFAR_INSTALL_DIR}/include/pelican-lofar")
+    set(INCLUDE_INSTALL_DIR "${AMPP_INSTALL_DIR}/include/AMPP")
 endif(NOT INCLUDE_INSTALL_DIR)
 
 if(NOT BINARY_INSTALL_DIR)
-    set(BINARY_INSTALL_DIR "${PELICAN_LOFAR_INSTALL_DIR}/bin")
+    set(BINARY_INSTALL_DIR "${AMPP_INSTALL_DIR}/bin")
 endif(NOT BINARY_INSTALL_DIR)
 
 include(compilerDefaults)
@@ -79,7 +79,7 @@ add_executable(lofarClient
 install(TARGETS "lofarClient" DESTINATION ${BINARY_INSTALL_DIR})
 
 target_link_libraries(lofarClient
-    pelican-lofar_static
+    AMPP_static
     ${QT_QTCORE_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTXML_LIBRARY}
@@ -92,7 +92,7 @@ target_link_libraries(lofarClient
 include_directories(${CMAKE_SOURCE_DIR}/lib)
 add_executable(serverMain serverMain.cpp)
 target_link_libraries(serverMain
-    pelican-lofar_static
+    AMPP_static
     ${PELICAN_LIBRARY}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTXML_LIBRARY}

@@ -37,7 +37,7 @@ qt4_wrap_ui(widget_lib_UI_H ${widget_lib_UI})
 
 set(externals
     ${PELICAN_LIBRARY}
-    pelican-lofar
+    AMPP
     ${QT_QTGUI_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTXML_LIBRARY}

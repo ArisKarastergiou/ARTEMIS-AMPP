@@ -41,8 +41,8 @@ set_target_properties(pipelineTest PROPERTIES
     LINK_FLAGS "${OpenMP_CXX_FLAGS}"
 )
 target_link_libraries(pipelineTest
-#    pelican-lofar_static
-    pelican-lofar
+#    AMPP_static
+    AMPP
     pelicanMdsm
 #    pipelineTestLib
     lofarTestLib
